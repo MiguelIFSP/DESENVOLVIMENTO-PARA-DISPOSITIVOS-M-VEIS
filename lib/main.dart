@@ -1,43 +1,65 @@
 import 'package:flutter/material.dart';
-
-import 'janela1.dart';
-import 'janela2.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'FraseControle.dart';
 
 void main() {
-  runApp(
-    Controle(),
-  );
+  runApp(const Janela());
 }
 
-class Controle extends StatefulWidget {
-  const Controle({super.key});
+class Janela extends StatelessWidget {
+  const Janela({super.key});
 
   @override
-  State<Controle> createState() => _ControleState();
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Scaffold(body: Principal()),
+    );
+  }
 }
 
-class _ControleState extends State<Controle> {
-  var janela = 'um';
+class Principal extends StatefulWidget {
+  const Principal({super.key});
 
-  // criação de muda
-  void muda() {
+  @override
+  State<Principal> createState() => _PrincipalState();
+}
+
+class _PrincipalState extends State<Principal> {
+  final FraseControle controle = FraseControle();
+
+  void proximaFrase() {
     setState(() {
-      janela = 'dois';
+      controle.proximaFrase();
+    });
+  }
+
+  void alternarLike() {
+    setState(() {
+      controle.fraseAtual.like = !controle.fraseAtual.like;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget atual = Janela1(muda);
-
-    if (janela == 'um') {
-      atual = Janela1(muda);
-    } else {
-      atual = Janela2();
-    }
-
-    return MaterialApp(
-      home: atual,
+    return Column(
+      children: [
+        Text(controle.fraseAtual.texto,
+            style: GoogleFonts.montserrat(
+              fontSize: 28,
+            )),
+        Text(controle.fraseAtual.autor,
+            style: GoogleFonts.msMadi(fontSize: 18)),
+        IconButton(
+          onPressed: alternarLike,
+          icon: Icon(
+            controle.fraseAtual.like ? Icons.favorite : Icons.favorite_border,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: proximaFrase,
+          child: Text('Próxima'),
+        ),
+      ],
     );
   }
 }
