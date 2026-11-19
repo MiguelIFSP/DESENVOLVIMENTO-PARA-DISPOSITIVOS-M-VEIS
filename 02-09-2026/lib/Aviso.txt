@@ -1,0 +1,8 @@
+// Mauro eu não tinha entendido o que vc quis dizer com esse ex
+Exercício
+1. Crie uma app para questões da sua disciplina preferida no
+ensino médio. Adicione 3 questoes.
+
+
+// Eu tava implementando no código que a gente fez (janela1.dart, janela2.dart, main.dart, pergunta.dart, perguntas.dart, questoes.dart).
+Se o código estiver diferente este é o motivo. Vou deixar esse ex em teste3.dart
