@@ -1,0 +1,18 @@
+name: atividade_8_23_09
+description: Galeria com aprovação de imagens da atividade de 23/09.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - abobora.jpg
+    - Banana.jpg
+    - jaca.jpg

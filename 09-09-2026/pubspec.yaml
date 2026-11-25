@@ -1,0 +1,14 @@
+name: atividade_6_09_09
+description: Navegação entre telas e rotas da atividade de 09/09.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

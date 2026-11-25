@@ -1,0 +1,13 @@
+name: atividade_7_16_09
+description: Envio de dados para outra tela na atividade de 16/09.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  uses-material-design: true
